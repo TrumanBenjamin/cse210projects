@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        tbdisplaywelcomemessage();
+        tbdisplaywelcomemessage(); 
 
         string tbusername = tbpromptusername();
         int tbusernumber = tbpromptusernumber();
