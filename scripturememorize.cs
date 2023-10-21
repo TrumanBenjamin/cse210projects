@@ -1,4 +1,5 @@
 class scripture
+
 {
     static void Main(string[] args)
     {
