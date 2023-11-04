@@ -1,10 +1,10 @@
 /**
 Authors:
 - Wessly Green
-- Ethan Glenn
-- Truman Benjamin
-- Stephen Beckstead
-- Nii Gogoe
+- Ethan Glenn 
+- Truman Benjamin 
+- Stephen Beckstead 
+- Nii Gogoe 
 */
 
 using System.Dynamic;
