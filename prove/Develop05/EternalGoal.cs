@@ -1,24 +1,26 @@
 using System;
 
+/**
+Authors:
+- Wessly Green
+- Ethan Glenn
+- Truman Benjamin
+- Stephen Beckstead
+- Nii Gogoe
+*/
+
+
 class EternalGoal : Goal
 {
-
-    private int _steps;
-    private int _pointsPerStep;
-
-    public EternalGoal(string name, string description, int pointsPerStep) : base(name, description, "Eternal") 
+    public EternalGoal(string name, string description, int points) : base(name,points,description)
     {
-        _pointsPerStep = pointsPerStep;
+        _type = 2;
     }
 
-    public int calculatePoints()
+    public override int completeGoal()
     {
-        setPoints(_steps * _pointsPerStep);
-        return getPoints();
-    }
-
-    public void stepsCompleted(int x)
-    {
-        setPoints(getPoints() + (_pointsPerStep * x));
+        Console.WriteLine($"Congratulations! You have now earned {_points} points!");
+        Console.WriteLine($"You now have {_points} points.");
+        return _points;
     }
 }

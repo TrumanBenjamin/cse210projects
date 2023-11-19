@@ -1,73 +1,53 @@
 using System;
 
+/**
+Authors:
+- Wessly Green
+- Ethan Glenn
+- Truman Benjamin
+- Stephen Beckstead
+- Nii Gogoe
+*/
+
 class Goal
 {
 
-    private string _name;
-    private int _points;
-    private string _description;
-    private bool _completed;
+    protected string _name;
+    protected int _points;
+    protected string _description;
+    protected int _type;
+    protected int _completed = 0;
 
-    // For Goal Type:
-    // int 0 = Simple
-    // int 1 = Checklist
-    // int 2 = Eternal
-    private int _goalType;
 
-    public Goal(string name, string description, string goalType="Simple")
+    public Goal(string name, int points, string description)
     {
         _name = name;
+        _points = points;
         _description = description;
-        _points = 0;
-        _completed = false;
-        if (goalType == "Simple") {
-            _goalType = 0;
-        } else if (goalType == "Checklist") {
-            _goalType = 1;
-        } else if (goalType == "Eternal") {
-            _goalType = 2;
-        }
     }
 
+    public string getGoalName()
+    {
+        return _name;
+    }
+    
     public int getPoints()
     {
         return _points;
     }
 
-    protected void setPoints(int points)
+    public virtual string getGoal()
     {
-        _points = points;
+        return $"[ ] {_name} ({_description})";        
     }
 
-    public string getName()
+    public virtual string getParsedGoal() 
     {
-        return _name;
+        return $"{_type},{_name},{_description},{_points}";
     }
 
-    public string getDescription()
+    public virtual int completeGoal()
     {
-        return _description;
-    }
-
-    public string getGoalType()
-    {
-        if (_goalType == 0) {
-            return "Simple";
-        } else if (_goalType == 1) {
-            return "Checklist";
-        } else if (_goalType == 2) {
-            return "Eternal";
-        } else {
-            return null;
-        }
-    }
-
-    protected bool getState()
-    {
-        return _completed;
-    }
-
-    protected void setState(bool state) {
-        _completed = state;
+        return 1;
     }
 }
